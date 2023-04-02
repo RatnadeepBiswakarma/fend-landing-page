@@ -6,8 +6,12 @@
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Simple landing page app with DOM manipulation.
 
-To get started, open `js/app.js` and start building out the app's functionality
+### Features
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+1. Renders 4 sections with lorem ipsum content
+2. Generates the navbar dynamically using javascript
+3. Clicking on the navbar link it scrolls to that section
+4. Scrolling the page will also highlight the section which is in the viewport
+5. The section which is in the viewport will be highlighted with slight dark background color
