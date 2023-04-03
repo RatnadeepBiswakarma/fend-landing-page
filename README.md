@@ -15,3 +15,7 @@ Simple landing page app with DOM manipulation.
 3. Clicking on the navbar link it scrolls to that section
 4. Scrolling the page will also highlight the section which is in the viewport
 5. The section which is in the viewport will be highlighted with slight dark background color
+
+## How to open
+
+Download/clone the project, open the index.html in browser
