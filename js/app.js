@@ -28,6 +28,7 @@
   const sectionNodes = document.querySelectorAll("section")
   const sectionHeaders = document.querySelectorAll("section h2")
   let timerId = null
+  let showScrollToTopButton = false
 
   const sectionData = Array.from(sectionNodes).map((s, idx) => ({
     id: s.id,
@@ -72,6 +73,10 @@
     nav.appendChild(frag)
   }
 
+  function scrollToTop() {
+    document.body.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   function setSectionStyleOnScroll() {
     sectionData.forEach(item => {
       const section = document.querySelector(`#${item.id}`)
@@ -80,7 +85,7 @@
       const menu = document.querySelector(`#${item.associatedMenuId}`)
       // check if the section is in viewport
       if (
-        rect.top > 60 &&
+        rect.top > -20 &&
         rect.top < window.innerHeight &&
         rect.bottom > 0 &&
         rect.bottom < window.innerHeight
@@ -92,6 +97,13 @@
         menu.classList.remove("menu-active")
       }
     })
+
+    // toggle scroll to top button
+    if (document.body.scrollTop > 100) {
+      document.querySelector("#scroll-to-top").classList.add("visible")
+    } else {
+      document.querySelector("#scroll-to-top").classList.remove("visible")
+    }
   }
 
   /**
@@ -119,4 +131,5 @@
   // Set sections as active
 
   document.body.onscroll = () => debounce(setSectionStyleOnScroll, 100)
+  document.querySelector("#scroll-to-top").onclick = scrollToTop
 })()

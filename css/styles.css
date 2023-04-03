@@ -205,6 +205,26 @@ section:nth-of-type(3n + 1) .landing__container::after {
   transition: ease 0.5s all;
 }
 
+#scroll-to-top {
+  display: flex;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50px;
+  align-items: center;
+  font-size: 0.9rem;
+  justify-content: center;
+  transform: translateY(6rem);
+  transition: transform 0.5s cubic-bezier(0, 0.26, 0, 1);
+  cursor: pointer;
+}
+
+#scroll-to-top.visible {
+  transform: translateY(0);
+}
+
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
@@ -215,6 +235,7 @@ section.section-active {
     rgba(0, 0, 0, 0.1) 0%,
     rgba(0, 0, 0, 0) 100%
   );
+  border: 1px solid #d5d5d5;
 }
 
 section.section-active .landing__container::before {
